@@ -1,0 +1,508 @@
+/**
+ * NaviCampus UAE - Intelligent Onboarding Wizard Styles
+ * Clean Swiss Layout, High-Density Information Hierarchy.
+ */
+
+.onboarding-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.onboarding-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.onboarding-dialog {
+  background-color: #FFFFFF;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  border-radius: 4px;
+  border: 1px solid #CBD5E1;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from {
+    transform: translateY(16px) scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Modal Header Bar */
+.onboarding-top-bar {
+  height: 52px;
+  background-color: #0F172A;
+  color: #FFFFFF;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.onboarding-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.swiss-cross {
+  color: #DC2626;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.brand-text {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+}
+
+.brand-tag {
+  font-family: var(--font-mono, 'DM Mono', monospace);
+  font-size: 10px;
+  color: #94A3B8;
+  letter-spacing: 0.1em;
+  border-left: 1px solid #334155;
+  padding-left: 10px;
+}
+
+.onboarding-close-btn {
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.onboarding-close-btn:hover {
+  color: #FFFFFF;
+}
+
+/* Progress Track Line */
+.wizard-progress-track {
+  height: 3px;
+  background-color: #E2E8F0;
+  width: 100%;
+}
+
+.wizard-progress-bar {
+  height: 100%;
+  background-color: #DC2626;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Body Content */
+.onboarding-content {
+  padding: 24px 28px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.step-pane {
+  display: flex;
+  flex-direction: column;
+}
+
+.step-meta {
+  font-family: var(--font-mono, 'DM Mono', monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #DC2626;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.step-title {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: 20px;
+  font-weight: 800;
+  color: #0F172A;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.step-description {
+  font-size: 13px;
+  color: #64748B;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #475569;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 14px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0F172A;
+  background-color: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.form-input:focus {
+  background-color: #FFFFFF;
+  border-color: #DC2626;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.12);
+}
+
+/* Campus Selector Radio Cards */
+.campus-selector-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.campus-card {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.campus-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.campus-card-content {
+  padding: 14px 16px;
+  border: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.campus-card:hover .campus-card-content {
+  border-color: #CBD5E1;
+  background-color: #FFFFFF;
+}
+
+.campus-card.selected .campus-card-content {
+  border-color: #DC2626;
+  background-color: #FEF2F2;
+  box-shadow: 0 0 0 1px #DC2626;
+}
+
+.campus-card-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #DC2626;
+  background-color: rgba(220, 38, 38, 0.1);
+  padding: 2px 6px;
+  border-radius: 2px;
+  margin-bottom: 4px;
+}
+
+.campus-card-name {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: 14px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.campus-card-desc {
+  font-size: 12px;
+  color: #64748B;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.campus-card-location {
+  font-size: 11px;
+  font-weight: 600;
+  color: #DC2626;
+}
+
+/* Step 2: Academic Profile */
+.pills-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.select-pill {
+  padding: 8px 16px;
+  background-color: #F8FAFC;
+  border: 1px solid #CBD5E1;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.select-pill:hover {
+  border-color: #94A3B8;
+  background-color: #FFFFFF;
+}
+
+.select-pill.active {
+  background-color: #0F172A;
+  color: #FFFFFF;
+  border-color: #0F172A;
+}
+
+/* College Radio Cards Grid */
+.college-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.college-card {
+  cursor: pointer;
+}
+
+.college-card input {
+  display: none;
+}
+
+.college-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
+  border-radius: 4px;
+  transition: all 0.12s ease;
+}
+
+.college-card:hover .college-card-inner {
+  background-color: #FFFFFF;
+  border-color: #CBD5E1;
+}
+
+.college-card.selected .college-card-inner {
+  border-color: #DC2626;
+  background-color: #FEF2F2;
+}
+
+.college-icon {
+  font-size: 18px;
+}
+
+.college-name {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.college-code {
+  font-family: var(--font-mono, 'DM Mono', monospace);
+  font-size: 10px;
+  color: #64748B;
+}
+
+/* Spatial Priorities Grid */
+.priorities-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.priority-card {
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.priority-card input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.priority-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border: 1px solid #E2E8F0;
+  background-color: #F8FAFC;
+  border-radius: 4px;
+  transition: all 0.12s ease;
+}
+
+.priority-card:hover .priority-card-inner {
+  background-color: #FFFFFF;
+  border-color: #CBD5E1;
+}
+
+.priority-card.selected .priority-card-inner {
+  border-color: #0F172A;
+  background-color: #FFFFFF;
+}
+
+.priority-icon {
+  font-size: 20px;
+  width: 32px;
+  text-align: center;
+}
+
+.priority-details {
+  flex: 1;
+}
+
+.priority-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.priority-desc {
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 2px;
+}
+
+.priority-check-box {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #CBD5E1;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  transition: all 0.12s ease;
+}
+
+.priority-card.selected .priority-check-box {
+  background-color: #DC2626;
+  border-color: #DC2626;
+  color: #FFFFFF;
+}
+
+.check-mark {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* Action Bar */
+.onboarding-action-bar {
+  padding: 16px 28px;
+  background-color: #F8FAFC;
+  border-top: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wizard-action-right {
+  display: flex;
+  gap: 8px;
+}
+
+/* Responsive Mobile Optimization for Onboarding */
+@media (max-width: 600px) {
+  .onboarding-backdrop {
+    padding: 10px;
+  }
+
+  .onboarding-dialog {
+    max-height: 94vh;
+  }
+
+  .onboarding-top-bar {
+    padding: 0 14px;
+    height: 48px;
+  }
+
+  .brand-tag {
+    display: none;
+  }
+
+  .onboarding-content {
+    padding: 16px 14px;
+  }
+
+  .step-title {
+    font-size: 17px;
+  }
+
+  .step-description {
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+
+  .college-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .onboarding-action-bar {
+    padding: 12px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .onboarding-action-bar .swiss-btn {
+    height: 42px;
+    font-size: 11px;
+    padding: 0 14px;
+  }
+
+  .wizard-action-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .wizard-action-right .swiss-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

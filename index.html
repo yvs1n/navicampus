@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaviCampus UAE — Autonomous Spatial Wayfinding & Freshman Navigator</title>
+  
+  <!-- Smooth & Curvy Harmonious Font Pairing: Outfit + Plus Jakarta Sans + DM Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Swiss Graphic Design & Modular Grid Styles -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='4' fill='%23DC2626'/><text x='12' y='18' font-size='18' font-weight='900' fill='white' text-anchor='middle'>+</text></svg>">
+  <link rel="stylesheet" href="css/swiss-grid.css?v=2026.10">
+  <link rel="stylesheet" href="css/onboarding.css?v=2026.10">
+  <link rel="stylesheet" href="css/tutorial.css?v=2026.10">
+</head>
+<body>
+  <!-- Swiss Spatial Wayfinding Preloader -->
+  <div id="navicampus-preloader" aria-hidden="true">
+    <div class="preloader-compass-wrapper">
+      <div class="preloader-pulse-ring"></div>
+      <div class="preloader-pulse-ring"></div>
+      <div class="preloader-swiss-badge">
+        <span class="preloader-cross">+</span>
+      </div>
+    </div>
+    <div class="preloader-status-text">
+      <span class="preloader-dot">●</span>
+      <span>INITIALIZING SPATIAL BLUEPRINTS...</span>
+    </div>
+    <div class="preloader-coords-badge">LAT 25.2948° N · LON 55.4746° E</div>
+  </div>
+
+  <div class="app-shell">
+    <!-- Swiss Command Header -->
+    <header class="swiss-header" role="banner">
+      <div class="header-left">
+        <!-- Mobile Sidebar Toggle -->
+        <button id="btn-mobile-menu" class="mobile-menu-btn" title="Open Routes and Campus Menu" aria-label="Open navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <a href="index.html" class="brand-badge" title="NaviCampus UAE Master Command Center">
+          <div class="swiss-cross-icon">+</div>
+          <span class="brand-name">NAVICAMPUS</span>
+          <span class="brand-edition">2026 // UAE</span>
+        </a>
+
+        <div class="header-divider"></div>
+
+        <!-- Campus Selector Dropdown -->
+        <div class="campus-selector-wrapper">
+          <label for="campus-select" class="sr-only">Select UAE University Campus</label>
+          <select id="campus-select" class="swiss-select" title="Switch UAE Campus" aria-label="Select UAE University Campus">
+            <option value="uos">University of Sharjah (UoS) — Main & Medical</option>
+            <option value="aus">American University of Sharjah (AUS)</option>
+            <option value="rit">RIT Dubai — Silicon Oasis</option>
+          </select>
+        </div>
+
+        <!-- Tri-Campus Active Deployments Badge -->
+        <div class="tri-campus-badge" title="Active Deployments across UAE Universities (Scalable to GCC)">
+          <span class="badge-dot">●</span>
+          <span>3 CAMPUSES: UoS · AUS · RIT DUBAI</span>
+        </div>
+      </div>
+
+      <!-- Center Global Search Input -->
+      <div class="header-center">
+        <div class="search-container">
+          <label for="global-search" class="sr-only">Search campus buildings and rooms</label>
+          <svg class="search-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="global-search" class="search-input" 
+                 placeholder="Search building, room (e.g. M8-102), lab, musalla, or cafe..." 
+                 autocomplete="off" aria-label="Search campus buildings and rooms" />
+          <div id="search-results" class="search-results-dropdown" role="listbox"></div>
+        </div>
+      </div>
+
+      <!-- Right Action & Navigation Links -->
+      <div class="header-right">
+        <!-- Interactive Masterplan Tutorial Button -->
+        <button id="btn-start-tutorial" class="tutorial-nav-btn" title="Take Interactive Campus Masterplan Walkthrough">
+          <span class="tour-btn-dot"></span>
+          <span>GUIDE TOUR 🧭</span>
+        </button>
+
+        <!-- Required DesignAthon Nav Link -->
+        <a href="problem-solution.html" class="nav-link-btn rubric-btn" title="View Required DesignAthon 4-part Rubric Documentation">
+          <span>PROBLEM & SOLUTION</span>
+          <span style="font-size: 10px;">★</span>
+        </a>
+
+        <!-- Creator Badge -->
+        <a href="https://yassinr.me" target="_blank" rel="noopener noreferrer" class="creator-badge-nav" title="Made by Yassin Ragab — View Portfolio">
+          <span class="creator-badge-dot"></span>
+          <span class="creator-badge-text">BY <strong>YASSIN RAGAB</strong></span>
+          <span class="creator-badge-arrow">↗</span>
+        </a>
+
+        <!-- User Profile Callsign Button -->
+        <button id="btn-open-profile" class="user-profile-badge" title="Edit Student Profile & Preferences">
+          <span style="color:#DC2626;">●</span>
+          <span id="user-profile-callsign">STUDENT PILOT</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Master Workspace -->
+    <main class="app-workspace">
+      <!-- Left Spatial Sidebar -->
+      <aside class="spatial-sidebar" id="spatial-sidebar" role="complementary" aria-label="Navigation and Route Planning">
+        <!-- Mobile Drawer Header -->
+        <div class="sidebar-mobile-header">
+          <div class="sidebar-mobile-title">
+            <span class="swiss-cross" style="color: #DC2626; font-weight: 900; margin-right: 6px;">+</span>
+            <span>WAYFINDING CONTROLS</span>
+          </div>
+          <button id="btn-close-sidebar" class="sidebar-close-btn" aria-label="Close navigation sidebar">✕</button>
+        </div>
+        <!-- Campus Meta Banner -->
+        <div class="sidebar-section" style="background-color: #F8FAFC; border-bottom: 2px solid #E2E8F0;">
+          <div class="section-caption">ACTIVE SPATIAL BLUEPRINT</div>
+          <h2 id="active-campus-title" style="font-size: 13px; font-weight: 800; color: #0F172A; margin: 4px 0 8px 0;">
+            University of Sharjah — Main & Medical Campus
+          </h2>
+          <!-- Sector Focus Presets -->
+          <div class="section-caption" style="margin-top: 8px; font-size: 9px;">SECTOR FOCUS PRESETS</div>
+          <div id="sector-presets-bar" class="sector-presets-container" style="margin-top: 4px;"></div>
+        </div>
+
+        <!-- Route Planner Module -->
+        <div class="sidebar-section">
+          <div class="sidebar-header-row">
+            <span class="section-caption">A-TO-B WAYFINDING ENGINE</span>
+            <span style="font-family: var(--font-mono); font-size: 9px; font-weight: 700; color: #DC2626; background: #FEF2F2; padding: 2px 4px; border-radius: 2px;">
+              DIJKSTRA v2.4
+            </span>
+          </div>
+
+          <div class="route-planner-card">
+            <!-- Departure Point -->
+            <div class="route-input-group">
+              <label class="route-input-label" for="route-start-select">DEPARTURE / START POINT</label>
+              <select id="route-start-select" class="route-select" aria-label="Departure / Start Point"></select>
+            </div>
+
+            <!-- Invert / Swap Row -->
+            <div class="route-mid-actions">
+              <button id="btn-swap-route" class="btn-icon-text" title="Swap Start and Destination">
+                <span>⇅</span> SWAP TERMINALS
+              </button>
+
+              <!-- Step-Free Accessible Toggle -->
+              <label class="switch-label" for="step-free-toggle" title="Enable Step-Free Route for Wheelchair & Trolley">
+                <input type="checkbox" id="step-free-toggle" class="switch-input" aria-label="Toggle Step-Free Accessible Navigation" />
+                <span>♿ STEP-FREE ONLY</span>
+              </label>
+            </div>
+
+            <!-- Destination Point -->
+            <div class="route-input-group">
+              <label class="route-input-label" for="route-end-select">ARRIVAL DESTINATION</label>
+              <select id="route-end-select" class="route-select" aria-label="Arrival Destination"></select>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="route-btn-row">
+              <button id="btn-find-route" class="swiss-btn swiss-btn-accent" style="flex: 2;">
+                CALCULATE ROUTE ⚡
+              </button>
+              <button id="btn-clear-route" class="swiss-btn swiss-btn-secondary" style="flex: 1;" title="Clear Active Route">
+                CLEAR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Jump Bar: "Take Me to Class" -->
+        <div class="sidebar-section">
+          <div class="sidebar-header-row">
+            <span class="section-caption">1-CLICK FREQUENT DESTINATIONS</span>
+            <span style="font-size: 10px; color: #64748B;">TAP TO NAVIGATE</span>
+          </div>
+          <div id="quick-jumps-bar" class="quick-jumps-grid"></div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="sidebar-section" style="border-bottom: none;">
+          <div class="sidebar-header-row">
+            <span class="section-caption">MAP LAYER FILTERS</span>
+          </div>
+          <div class="category-pills-row">
+            <button class="category-filter-pill active" data-category="all">ALL ZONES</button>
+            <button class="category-filter-pill" data-category="engineering">ENGINEERING</button>
+            <button class="category-filter-pill" data-category="computing">COMPUTING (CCI)</button>
+            <button class="category-filter-pill" data-category="library">LIBRARIES</button>
+            <button class="category-filter-pill" data-category="admin">ADMINISTRATION</button>
+            <button class="category-filter-pill" data-category="dining">DINING & CAFES</button>
+            <button class="category-filter-pill" data-category="sports">ATHLETICS</button>
+            <button class="category-filter-pill" data-category="medical">MEDICAL SCIENCES</button>
+          </div>
+        </div>
+      </aside>
+      
+      <!-- Backdrop for mobile sidebar drawer -->
+      <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+      <!-- Center Map Canvas Area -->
+      <section class="map-canvas-area" aria-label="Campus Blueprint Canvas">
+        <!-- Floating Persistent Accessibility HUD Banner -->
+        <div class="map-hud-banner" id="map-hud-accessibility" role="status" aria-live="polite">
+          <span class="hud-pill-icon">♿</span>
+          <span class="hud-pill-text"><strong>STEP-FREE ROUTING READY</strong> · Ramps & Elevators <span class="hud-desktop-only">· WCAG 2.1 AA</span></span>
+          <button id="hud-toggle-access-btn" class="hud-pill-action" title="Toggle Step-Free Wheelchair Filter">TOGGLE</button>
+        </div>
+
+        <div id="map-container" style="width: 100%; height: 100%;"></div>
+
+        <!-- Floating Turn-by-Turn Wayfinding Sheet (Appears on route calculation) -->
+        <div id="route-directions-sheet" class="turn-by-turn-sheet" style="display: none;" role="region" aria-label="Active Route Directions"></div>
+
+        <!-- Right Building Details Drawer (Slides out on click) -->
+        <div id="building-details-drawer" class="side-drawer drawer-right" style="display: none;" role="region" aria-label="Building Specifications"></div>
+      </section>
+    </main>
+
+    <!-- Mobile Bottom Quick Navigation Bar -->
+    <nav class="mobile-bottom-bar" aria-label="Mobile Quick Bar">
+      <button class="mb-nav-btn active" id="mb-btn-routes" aria-label="Open Routes & Wayfinding">
+        <span class="mb-nav-icon">⚡</span>
+        <span class="mb-nav-text">ROUTES</span>
+      </button>
+      <button class="mb-nav-btn" id="mb-btn-search" aria-label="Open Campus Search">
+        <span class="mb-nav-icon">🔍</span>
+        <span class="mb-nav-text">SEARCH</span>
+      </button>
+      <button class="mb-nav-btn" id="mb-btn-tour" aria-label="Take Campus Guided Tour">
+        <span class="mb-nav-icon">🧭</span>
+        <span class="mb-nav-text">TOUR</span>
+      </button>
+      <button class="mb-nav-btn" id="mb-btn-layers" aria-label="Open Map Layer Filters">
+        <span class="mb-nav-icon">🗺️</span>
+        <span class="mb-nav-text">LAYERS</span>
+      </button>
+      <button class="mb-nav-btn" id="mb-btn-rubric" aria-label="View Problem and Solution Documentation">
+        <span class="mb-nav-icon">★</span>
+        <span class="mb-nav-text">DOCS</span>
+      </button>
+    </nav>
+
+    <!-- Swiss HUD Toast Notification Container -->
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+  </div>
+
+  <!-- Core JavaScript Architecture -->
+  <script src="js/campus-data.js?v=2026.7"></script>
+  <script src="js/map-engine.js?v=2026.7"></script>
+  <script src="js/onboarding.js?v=2026.7"></script>
+  <script src="js/tutorial.js?v=2026.10"></script>
+  <script src="js/app.js?v=2026.10"></script>
+</body>
+</html>
