@@ -92,8 +92,6 @@ navicampus/
 │   ├── onboarding.js             # Freshman onboarding wizard & student persona state
 │   └── tutorial.js               # Step-by-step interactive onboarding tour
 ├── index.html                    # Main Command Center single-page application
-├── problem-solution.html         # Empirical research whitepaper & interactive ROI calculator
-├── JUDGE_GUIDE.md                # Quick-evaluation verification scenarios
 ├── LICENSE                       # MIT Open Source License
 └── README.md                     # GitHub repository public documentation
 ```
@@ -109,7 +107,6 @@ navicampus/
 | `js/onboarding.js` | Persona configuration modal, preference storage in `localStorage`, dynamic HUD callsign badge. | `class OnboardingWizard` |
 | `js/tutorial.js` | Guided tour overlay highlighting campus sectors, step-free toggles, search, and navigation controls. | `class CampusTutorial` |
 | `css/swiss-grid.css` | Design token definitions, 8px layout grid, high-contrast color palette, responsive breakpoints. | CSS Custom Properties (`--swiss-*`) |
-| `problem-solution.html` | Architectural documentation, failure mode audit of commercial apps, and live ROI calculator. | Independent documentation page |
 
 ---
 
@@ -314,7 +311,6 @@ Currently, the spatial database includes three major UAE universities:
 | **Interactive Walkthrough Tour** | ✅ Operational | Spotlight tour highlighting key tools for new users. |
 | **Multi-Campus Selector** | ✅ Operational | Real-time vector map and graph switching between UoS, AUS, and RIT Dubai. |
 | **Mobile Responsive Layout** | ✅ Operational | Bottom-sheet wayfinding sheet and thumb-friendly navigation. |
-| **Documentation & ROI Calculator** | ✅ Operational | Dedicated `problem-solution.html` page with empirical data and dynamic sliders. |
 
 ---
 

@@ -80,7 +80,6 @@ h1, h2, h3, h4, h5, h6,
 .metric-value,
 .sidebar-mobile-title,
 .user-profile-badge,
-.rubric-btn,
 .campus-card-name,
 .college-name,
 .section-title {
@@ -377,17 +376,6 @@ h1, h2, h3, h4, h5, h6,
   background-color: var(--swiss-canvas);
   color: var(--swiss-ink-900);
   border-color: var(--swiss-border-dark);
-}
-
-.rubric-btn {
-  border-color: var(--swiss-red);
-  color: var(--swiss-red);
-  background-color: var(--swiss-red-light);
-}
-
-.rubric-btn:hover {
-  background-color: var(--swiss-red);
-  color: var(--swiss-white);
 }
 
 .user-profile-badge {
@@ -1790,49 +1778,6 @@ h1, h2, h3, h4, h5, h6,
   .creator-badge-nav {
     display: none;
   }
-}
-
-/* ============================================================
-   CREATOR BADGE — Doc page variant (problem-solution.html)
-   ============================================================ */
-.doc-creator-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin: 10px 0 18px 0;
-  padding: 7px 14px;
-  border: 1px solid var(--swiss-border);
-  border-radius: 99px;
-  background: var(--swiss-canvas);
-  text-decoration: none;
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: var(--swiss-ink-700);
-  transition: border-color 0.15s ease, background 0.15s ease;
-  max-width: fit-content;
-}
-
-.doc-creator-badge:hover {
-  border-color: var(--swiss-red);
-  background: var(--swiss-red-light);
-}
-
-.doc-creator-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--swiss-accessible-green);
-  flex-shrink: 0;
-}
-
-.doc-creator-sep {
-  color: var(--swiss-ink-300);
-}
-
-.doc-creator-link {
-  font-weight: 700;
-  color: var(--swiss-red);
 }
 
 /* Tri-Campus Deployment Ecosystem Badge */

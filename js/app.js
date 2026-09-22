@@ -104,10 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".category-pills-row")?.scrollIntoView({ behavior: 'smooth' });
   });
 
-  document.getElementById("mb-btn-rubric")?.addEventListener("click", () => {
-    window.location.href = "problem-solution.html";
-  });
-
   document.getElementById("mb-btn-tour")?.addEventListener("click", () => {
     if (window.navicampusTutorial) {
       window.navicampusTutorial.start();

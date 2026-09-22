@@ -4,13 +4,13 @@
 
 **Autonomous Spatial Wayfinding, Sub-Building Room Resolution, and Step-Free Routing for UAE Universities**
 
-[![DesignAthon 2026](https://img.shields.io/badge/DesignAthon_2026-GDC_RIT_Dubai_%C3%97_+TWE-DC2626?style=for-the-badge)](https://github.com/yvs1n/navicampus)
+[![Platform](https://img.shields.io/badge/Platform-Web_%2F_Mobile-DC2626?style=for-the-badge)](https://github.com/yvs1n/navicampus)
 [![License: MIT](https://img.shields.io/badge/License-MIT-0EA5E9?style=for-the-badge)](LICENSE)
 [![Accessibility](https://img.shields.io/badge/WCAG_2.1-AAA_Compliant-10B981?style=for-the-badge)](https://www.w3.org/WAI/standards-guidelines/wcag/)
 [![Stack](https://img.shields.io/badge/Architecture-Zero--Build_ES_Modules-6366F1?style=for-the-badge)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 [![Deploy](https://img.shields.io/badge/Deploy-GitHub_Pages-black?style=for-the-badge&logo=github)](https://yvs1n.github.io/navicampus/)
 
-[Live Demo](https://yvs1n.github.io/navicampus/) · [Problem & Solution Rubric](https://yvs1n.github.io/navicampus/problem-solution.html) · [60-Second Judge Guide](JUDGE_GUIDE.md)
+[Live Demo](https://yvs1n.github.io/navicampus/) · [Architecture & Engineering Handoff](HANDOFF.md)
 
 </div>
 
@@ -110,7 +110,7 @@ During development, an empirical research survey was conducted across 114 UAE un
 | **Commuter Parking Friction** | **71%** | Commuters walking up to 1.4 km unnecessary distance under extreme sunlight. |
 | **Accessibility Navigation Failure** | **100%** | Students with mobility needs reported campus guides fail to provide step-free routes. |
 
-*Detailed persona journeys, Google Maps failure audits, and full survey breakdown can be explored in [problem-solution.html](problem-solution.html).*
+*Full architectural specifications, empirical survey findings, and system workflows are documented in [HANDOFF.md](HANDOFF.md).*
 
 ---
 
@@ -184,24 +184,23 @@ navicampus/
 │       ├── 04_mobile_wayfinding_experience.png
 │       └── 05_empirical_research_roi_calculator.png
 ├── .gitignore                    # Git ignore rules
+├── HANDOFF.md                    # Product architecture & engineering handoff specification
 ├── index.html                    # Master Command Center application
-├── JUDGE_GUIDE.md                # 60-second hackathon judge evaluation runbook
 ├── LICENSE                       # MIT License
-├── problem-solution.html         # Required DesignAthon 4-part rubric documentation
 └── README.md                     # Project documentation & overview
 ```
 
 ---
 
-## Hackathon Rubric Alignment
+## Product Architecture & Quality Standards
 
-| Criteria | Max | Implementation in NaviCampus |
-| :--- | :---: | :--- |
-| **1. Problem Understanding & Validation** | **10 / 10** | Comprehensive 114-student UAE empirical survey, Google Maps failure analysis, and documented student personas in `problem-solution.html`. |
-| **2. Solution Quality & Innovation** | **10 / 10** | Novel synthesis of sub-building room resolution, client-side Dijkstra pathfinding, and personalized student onboarding. |
-| **3. Usability & Accessibility** | **10 / 10** | Dedicated Step-Free mode for People of Determination, WCAG 2.1 AAA contrast compliance, and keyboard navigation. |
-| **4. UI Design & Visual Standards** | **10 / 10** | Strict International Typographic Style (Müller-Brockmann, 8px grid, Swiss Signal Red, tabular numbers). |
-| **5. Technical Execution & Polish** | **10 / 10** | Zero console errors, sub-10ms path calculation, multi-campus scalability, and responsive mobile layout. |
+| Pillar | Core Standard | Implementation in NaviCampus |
+| :--- | :--- | :--- |
+| **1. Spatial Accuracy & Room Resolution** | Sub-Building Precision | Resolves university room codes (e.g., `M8-102`, `EB1-014`), departments, and entrances. |
+| **2. Performance & Reliability** | Zero-Build & Sub-10ms | Client-side Dijkstra shortest-path pathfinding running in pure ES6 with 0 server roundtrips. |
+| **3. Accessibility (People of Determination)** | WCAG 2.1 AAA & Step-Free | Dedicated Step-Free mode excluding stairs and routing exclusively via ramps and elevators. |
+| **4. Architectural UI Standards** | Swiss Typographic Style | Strict 8px baseline grid, Swiss Signal Red accents, DM Mono coordinates, and high contrast. |
+| **5. Regional Scalability** | Multi-Campus Architecture | Seamless vector map switching across University of Sharjah, AUS, and RIT Dubai. |
 
 ---
 
@@ -213,7 +212,7 @@ Freshman, Computer Engineering
 Portfolio: [yassinr.me](https://yassinr.me)  
 GitHub: [@yvs1n](https://github.com/yvs1n)
 
-*Built as an original submission for the **GDC RIT Dubai × +TWE DesignAthon 2026**.*
+*Designed and engineered as an autonomous campus wayfinding & spatial intelligence engine.*
 
 ---
 
